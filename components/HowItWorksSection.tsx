@@ -1,13 +1,29 @@
+import { motion } from "framer-motion";
+
 export default function HowItWorksSection() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">How It Works</h2>
+          <motion.h2
+            className="text-4xl font-bold text-gray-800 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            How It Works
+          </motion.h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             {/* Step 1 */}
             <div className="flex items-start space-x-4">
               <div className="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg flex-shrink-0">01</div>
@@ -40,14 +56,31 @@ export default function HowItWorksSection() {
                 </p>
               </div>
             </div>
-          </div>
+
+            {/* CTA Button aligned left */}
+            <div className="pt-6">
+              <a
+                href="/preview/fe63acec-059b-4b3d-9a37-4da578dc9556/1137396/register"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-lg"
+              >
+                Ready to Try It? Join Free Today
+              </a>
+            </div>
+          </motion.div>
 
           {/* Image section */}
-          <div className="relative">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <img
               src="https://readdy.ai/api/search-image?query=Happy%20African%20American%20couple%20having%20meaningful%20conversation%20in%20beautiful%20modern%20setting%2C%20warm%20intimate%20lighting%2C%20both%20people%20smiling%20and%20engaged%2C%20romantic%20atmosphere%2C%20professional%20photography%20style%2C%20simple%20background%2C%20relationship%20goals&amp;width=500&amp;height=600&amp;seq=howitworks1&amp;orientation=portrait"
               alt="Happy couple talking"
               className="rounded-2xl shadow-lg object-cover w-full h-[600px] object-top"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-pink-200/20 to-purple-200/20 rounded-2xl"></div>
 
@@ -57,17 +90,7 @@ export default function HowItWorksSection() {
               <i className="ri-heart-fill text-purple-500 w-8 h-8 flex items-center justify-center text-2xl"></i>
               <i className="ri-heart-fill text-red-500 w-8 h-8 flex items-center justify-center text-2xl"></i>
             </div>
-          </div>
-        </div>
-
-        {/* CTA button */}
-        <div className="text-center mt-12">
-          <a
-            href="/preview/fe63acec-059b-4b3d-9a37-4da578dc9556/1137396/register"
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-lg"
-          >
-            Ready to Try It? Join Free Today
-          </a>
+          </motion.div>
         </div>
       </div>
     </section>
