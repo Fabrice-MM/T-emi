@@ -75,7 +75,7 @@ export default function Footer() {
               <i className="ri-phone-line text-purple-400 text-xl"></i>
               <div>
                 <div className="font-semibold">Call Us</div>
-                <div className="text-gray-300">+234 800 TEMI LOVE</div>
+                <div className="text-gray-300">+237 622 120 589 TEMI LOVE</div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
